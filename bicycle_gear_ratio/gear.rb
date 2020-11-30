@@ -26,7 +26,7 @@ class Gear
     def ratio 
         chainring / cog.to_f
     end
-    
+
     #assuming inches
     def gear_inches
         # tire goes around rim twice for diameter
