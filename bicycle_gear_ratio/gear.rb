@@ -26,19 +26,20 @@ class Gear
     def ratio 
         chainring / cog.to_f
     end
-
+    
+    #assuming inches
     def gear_inches
         # tire goes around rim twice for diameter
         ratio * (rim + (tire * 2))
     end
 end
 
-puts Gear.new(52, 11).ratio
-#=> 4.7272727272727275
-puts Gear.new(30, 27).ratio
-#=> 1.1111111111111112
+# puts Gear.new(52, 11).ratio
+# #=> 4.7272727272727275
+# puts Gear.new(30, 27).ratio
+# #=> 1.1111111111111112
 
 puts Gear.new(52, 11, 26, 1.5).gear_inches
-#=>
-puts Gear.new(52, 11, 24, 1.25)
-#=>
+#=> 137.0909090909091
+puts Gear.new(52, 11, 24, 1.25).gear_inches
+#=> 125.27272727272728
