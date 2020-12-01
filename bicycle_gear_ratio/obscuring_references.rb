@@ -12,7 +12,7 @@ class ObscuringReferences
     end
     #other methods...
 end
-#this class expects to be initia.lized with a 2d array of rims and tires in mm
+#this class expects to be initialized with a 2d array of rims and tires in mm
 # @data = [[622, 20],[622, 23],[559, 30],[559, 40]]
 
 #This is an anti-pattern because while the class does everything necessary to hide the data from itself
