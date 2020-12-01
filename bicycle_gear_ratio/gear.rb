@@ -14,13 +14,12 @@
 # wheel diameter = rim diameter + tire diameter * 2
 
 class Gear 
-    attr_reader :chainring, :cog, :rim, :tire
+    attr_reader :chainring, :cog, :wheel
 
     def initialize(chainring, cog, rim, tire)
         @chainring = chainring
         @cog = cog
-        @rim = rim
-        @tire = tire
+        @wheel = Wheel.new(rim, tire)
     end
 
     def ratio 
@@ -30,7 +29,14 @@ class Gear
     #assuming inches
     def gear_inches
         # tire goes around rim twice for diameter
-        ratio * (rim + (tire * 2))
+        # notice that the calculation for diameter was also here, I encapsulated that logic out
+        ratio * diameter
+    end
+
+    Wheel = Struct.new(:rim, :tire) do
+        def diameter
+            (rim + (tire * 2))
+        end
     end
 end
 
